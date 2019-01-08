@@ -1,0 +1,45 @@
+{
+  "name": "yandex-dialogs-sdk-mongodb",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "jest",
+    "dev": "tsc -w --declaration",
+    "build": "rm -rf dist && tsc",
+    "version": "npm run changelog && git add CHANGELOG.md",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "release": "conventional-github-releaser -p angular",
+    "deploy": "tsc && git push --follow-tags origin master && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fletcherist/yandex-dialogs-sdk-mongodb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/fletcherist/yandex-dialogs-sdk-mongodb/issues"
+  },
+  "homepage": "https://github.com/fletcherist/yandex-dialogs-sdk-mongodb#readme",
+  "author": "Phil Romanov @fletcherist",
+  "license": "MIT",
+  "dependencies": {
+    "@types/mongodb": "^3.1.1",
+    "mongodb": "^3.1.1",
+    "yandex-dialogs-sdk": "^2.0.6"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@types/node": "^10.5.1",
+    "conventional-changelog-cli": "^2.0.0",
+    "conventional-github-releaser": "^3.1.0",
+    "jest": "^23.2.0",
+    "prettier": "^1.13.7",
+    "ts-jest": "^23.0.0",
+    "tslint": "^5.10.0",
+    "typescript": "^2.9.2",
+    "typescript-eslint-parser": "^16.0.1"
+  }
+}
